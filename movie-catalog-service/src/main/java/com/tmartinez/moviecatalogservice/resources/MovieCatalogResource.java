@@ -24,13 +24,12 @@ public class MovieCatalogResource {
                 new Rating("5678", 3)
         );
 
+        return ratings.stream().map(rating -> new CatalogItem("Transformers", "Test", 4))
+                .collect(Collectors.toList());
+
         // For each movie ID, call movie info service and get details
 
         // Put them all together
-
-        return Collections.singletonList(
-                new CatalogItem("Transformers", "Test", 4)
-        );
 
     }
 }
